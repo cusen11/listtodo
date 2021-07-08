@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Nav from "./Component/Nav/Nav";
 import ListPost from "./Component/ListPost/ListPost";
+import ObjAndArray from "./Component/ObjAndArray/ObjAndArray";
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/listpost">
             <ListPost/>
+          </Route>
+          <Route path="/obj">
+            <ObjAndArray/>
           </Route>
         </Switch>
       </Router>,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function ListPost(props) {
     const history = useHistory()
@@ -40,6 +41,7 @@ function ListPost(props) {
                     <h1 key={data.id} onClick={()=> goDetail(data.id)}>{data.name}</h1>
                 )
             }
+            <Link to='/obj'> OBJ </Link>
         </div>
     );
 }
