@@ -9,6 +9,7 @@ import {
 import Nav from "./Component/Nav/Nav";
 import ListPost from "./Component/ListPost/ListPost";
 import ObjAndArray from "./Component/ObjAndArray/ObjAndArray";
+import API from "./Component/API/API";
 
 
 function App() {
@@ -32,8 +33,11 @@ function App() {
           <Route path="/obj">
             <ObjAndArray/>
           </Route>
+          <Route path="/api">
+            <API/>
+          </Route>
         </Switch>
-      </Router>,
+      </Router>
 
     </div>
   );
