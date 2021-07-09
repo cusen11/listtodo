@@ -8,7 +8,8 @@ function Nav(props) {
                 <li><Link to='/useeffects'> Use Effects</Link></li> 
                 <li><Link to='/listpost'> List Post</Link></li> 
                 <li><Link to='/obj'> OBJ </Link></li>
-                <li><Link to='/api'> API </Link></li>  
+                <li><Link to='/api'> API </Link></li> 
+                <li><Link to='/apihuyen'> API Huyen </Link></li> 
             </ul>
         </div>
     );

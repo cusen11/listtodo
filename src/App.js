@@ -10,6 +10,7 @@ import Nav from "./Component/Nav/Nav";
 import ListPost from "./Component/ListPost/ListPost";
 import ObjAndArray from "./Component/ObjAndArray/ObjAndArray";
 import API from "./Component/API/API";
+import APIHuyen from "./Component/APIHuyen/APIHuyen";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/api">
             <API/>
+          </Route>
+          <Route path="/apihuyen">
+            <APIHuyen/>
           </Route>
         </Switch>
       </Router>
