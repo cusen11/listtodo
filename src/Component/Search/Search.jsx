@@ -13,8 +13,7 @@ function Search(props) {
                 // yêu cầu lên server bằng fecth
                 const respond = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=cd58c7bd131cba3c391d62c5fda2ae53&language=en-US&query=${keySearch}`);
                 const responJson = await respond.json(); 
-                //sử dụng respondJson  
-                console.log(responJson)
+                //sử dụng respondJson   
                 setData(responJson.results) 
             } 
             getData()
