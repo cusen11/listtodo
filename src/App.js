@@ -13,8 +13,7 @@ import API from "./Component/API/API";
 import APIHuyen from "./Component/APIHuyen/APIHuyen";
 import ListTV from "./Component/ListTV/ListTV";
 import DetailTV from "./Component/DetailTV/DetailTV";
-import Search from "./Component/Search/Search";
-import SearchDetail from "./Component/SearchDetail/SearchDetail";
+import Search from "./Component/Search/Search"; 
 
 
 function App() {
@@ -54,11 +53,7 @@ function App() {
 
           <Route path="/search">
             <Search/>
-          </Route>
-          <Route path="/searchid/:idSearch">
-            <SearchDetail/>
-          </Route>
-
+          </Route>  
         </Switch>
       </Router>
 

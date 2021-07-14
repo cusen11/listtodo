@@ -1,52 +1,30 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; 
 import { useHistory } from 'react-router-dom';
 
-function Search(props) {
 
-    //API : https://api.themoviedb.org/3/search/person?api_key=cd58c7bd131cba3c391d62c5fda2ae53&language=en-US&query=${từ khóa search}&page=1&include_adult=false
-    // tìm hết các thứ search ra đưa ra danh sách gióng trang post
-    // tham khảo Component API
-    // thẻ input onChange 
+function Search(props) { 
+    const history = useHistory()
+
     const [data, setData] = useState()
+    const [keySearch, setKey] = useState()
     useEffect(() =>{ 
         const getData = async () =>{  
                 // yêu cầu lên server bằng fecth
-                const respond = await fetch(`https://api.themoviedb.org/3/search/person?api_key=cd58c7bd131cba3c391d62c5fda2ae53&language=en-US&query={từ`);
+                const respond = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=cd58c7bd131cba3c391d62c5fda2ae53&language=en-US&query=${keySearch}`);
                 const responJson = await respond.json(); 
-                //sử dụng respondJson 
-               
-                setData(responJson.results)
-                
-                console.log(responJson.results)
+                //sử dụng respondJson  
+                console.log(responJson)
+                setData(responJson.results) 
             } 
             getData()
-        },[data]) 
-
-        //saerch title
-        const [keySearch, setKey] = useState()
-
-        useEffect(() =>{ 
-            const getDataTitle = async () =>{  
-                    // yêu cầu lên server bằng fecth
-                    const respond = await fetch(`https://api.themoviedb.org/3/search/person?api_key=cd58c7bd131cba3c391d62c5fda2ae53&language=en-US&query=${keySearch}&page=1&include_adult=false`);
-                    const responJson = await respond.json(); 
-                    //sử dụng respondJson 
-                    console.log(responJson)
-                    setKey(responJson)
-    
-                    
-                } 
-                getDataTitle()
-            },[keySearch]) 
-
+        },[keySearch])  
     
     const handleChange = (e)=>{
         setTimeout(()=>{
             setKey(e.target.value)
         },3000)
-    }
-        
+    } 
     return (
         <div>
             {
@@ -61,8 +39,9 @@ function Search(props) {
                     <div key={index}>
                             
                             <h3 >id:{value.id}</h3>
-                            <h3>title search: {value.name}</h3>
-                            <img src={`https://image.tmdb.org/t/p/w300/${value.profile_path}`} alt="huyen"></img>
+                            <h3 onClick={() => history.push(`/TV/${value.id}`)}>title search: {value.name}</h3>
+                            {value.backdrop_path ? <img src={`https://image.tmdb.org/t/p/w300/${value.backdrop_path}`} alt={value.name}/> : ''}
+                            
                     </div>
                 )
             }
