@@ -25,7 +25,7 @@ function APIHuyen() {
            {data?.map((value, index) => 
                     <div key={index}> 
                        <h3 style={{cursor:'pointer'}} onClick={()=>handleClickPost(value.id)}>Title: {value.original_title}</h3>
-                        <img src={`https://image.tmdb.org/t/p/w300/${value.backdrop_path}`} alt="" /> 
+                        <img src={`https://image.tmdb.org/t/p/w300${value.backdrop_path}`} alt="" /> 
                         <h3>Giải thích: {value.overview}</h3> 
                         <p>Ngày xuất bản: {value.release_date}</p>  
                     </div>

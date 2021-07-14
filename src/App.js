@@ -11,6 +11,10 @@ import ListPost from "./Component/ListPost/ListPost";
 import ObjAndArray from "./Component/ObjAndArray/ObjAndArray";
 import API from "./Component/API/API";
 import APIHuyen from "./Component/APIHuyen/APIHuyen";
+import ListTV from "./Component/ListTV/ListTV";
+import DetailTV from "./Component/DetailTV/DetailTV";
+import Search from "./Component/Search/Search";
+import SearchDetail from "./Component/SearchDetail/SearchDetail";
 
 
 function App() {
@@ -40,6 +44,21 @@ function App() {
           <Route path="/apihuyen">
             <APIHuyen/>
           </Route>
+          <Route path="/ListTV">
+            <ListTV/>
+          </Route>
+
+          <Route path="/TV/:idTV">
+            <DetailTV/>
+          </Route>
+
+          <Route path="/search">
+            <Search/>
+          </Route>
+          <Route path="/searchid/:idSearch">
+            <SearchDetail/>
+          </Route>
+
         </Switch>
       </Router>
 

@@ -10,6 +10,8 @@ function Nav(props) {
                 <li><Link to='/obj'> OBJ </Link></li>
                 <li><Link to='/api'> API </Link></li> 
                 <li><Link to='/apihuyen'> API Huyen </Link></li> 
+                <li><Link to='/listtv'> list TV</Link></li>
+                <li><Link to='/search'> Search</Link></li>
             </ul>
         </div>
     );
